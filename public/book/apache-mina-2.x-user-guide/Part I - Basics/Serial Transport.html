@@ -1,0 +1,846 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>串行传输 | Apache MINA User Guide 中文翻译《Apache MINA 2 用户指南》 </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Part I - Basics/Chapter 7 - Handler.html" />
+    
+    
+    <link rel="prev" href="../Part I - Basics/APR Transport.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.1.17"
+        data-chapter-title="串行传输"
+        data-filepath="Part I - Basics/Serial Transport.md"
+        data-basepath=".."
+        data-revision="Sat Apr 09 2016 12:59:17 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> Part I - Basics 基础</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Part I - Basics/Chapter 1 - Getting Started.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 1 - Getting Started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Chapter 1 - 开始
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="Part I - Basics/NIO Overview.html">
+            
+                
+                    <a href="../Part I - Basics/NIO Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        NIO 总览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="Part I - Basics/Why MINA.html">
+            
+                
+                    <a href="../Part I - Basics/Why MINA.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        为何使用 MINA
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="Part I - Basics/Features.html">
+            
+                
+                    <a href="../Part I - Basics/Features.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        特性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="Part I - Basics/First steps.html">
+            
+                
+                    <a href="../Part I - Basics/First steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        开始的步骤
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="Part I - Basics/c1 Summary.html">
+            
+                
+                    <a href="../Part I - Basics/c1 Summary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.</b>
+                        
+                        总结
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="Part I - Basics/Chapter 2 - Basics.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 2 - Basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.1.</b>
+                        
+                        Chapter 2 - 基础
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="Part I - Basics/Application Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Application Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.</b>
+                        
+                        应用架构
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="Part I - Basics/Server Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Server Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.1.</b>
+                        
+                        服务端架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="Part I - Basics/Client Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Client Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.2.</b>
+                        
+                        客户端架构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="Part I - Basics/Sample TCP Server.html">
+            
+                
+                    <a href="../Part I - Basics/Sample TCP Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.7.</b>
+                        
+                        TCP Server 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="Part I - Basics/Sample TCP Client.html">
+            
+                
+                    <a href="../Part I - Basics/Sample TCP Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.8.</b>
+                        
+                        TCP Client 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="Part I - Basics/Sample UDP Server.html">
+            
+                
+                    <a href="../Part I - Basics/Sample UDP Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.9.</b>
+                        
+                        UDP Server 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="Part I - Basics/Sample UDP Client.html">
+            
+                
+                    <a href="../Part I - Basics/Sample UDP Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.10.</b>
+                        
+                        UDP Client 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="Part I - Basics/c2 Summary.html">
+            
+                
+                    <a href="../Part I - Basics/c2 Summary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.11.</b>
+                        
+                        总结
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.11.1" data-path="Part I - Basics/Chapter 3 - Service.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 3 - Service.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.11.1.</b>
+                        
+                        Chapter 3 - 服务
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.12" data-path="Part I - Basics/IoService Introduction.html">
+            
+            <span><b>1.1.12.</b> IoService 介绍</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.13" data-path="Part I - Basics/IoService Details.html">
+            
+                
+                    <a href="../Part I - Basics/IoService Details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.13.</b>
+                        
+                        IoService 细节
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.14" data-path="Part I - Basics/Acceptor.html">
+            
+                
+                    <a href="../Part I - Basics/Acceptor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.14.</b>
+                        
+                        Acceptor
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15" data-path="Part I - Basics/Connector.html">
+            
+                
+                    <a href="../Part I - Basics/Connector.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.</b>
+                        
+                        Connector
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.15.1" data-path="Part I - Basics/Chapter 4 - Session.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 4 - Session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.1.</b>
+                        
+                        Chapter 4 - Session(会话)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15.2" data-path="Part I - Basics/Chapter 5 - Filters.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 5 - Filters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.2.</b>
+                        
+                        Chapter 5 - Filter (过滤器)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15.3" data-path="Part I - Basics/Chapter 6 - Transports.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 6 - Transports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.3.</b>
+                        
+                        Chapter 6 - Transport (传输)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.16" data-path="Part I - Basics/APR Transport.html">
+            
+                
+                    <a href="../Part I - Basics/APR Transport.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.16.</b>
+                        
+                        APR 传输
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.17" data-path="Part I - Basics/Serial Transport.html">
+            
+                
+                    <a href="../Part I - Basics/Serial Transport.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.17.</b>
+                        
+                        串行传输
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.17.1" data-path="Part I - Basics/Chapter 7 - Handler.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 7 - Handler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.17.1.</b>
+                        
+                        Chapter 7 - Handler (处理器)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Part II - MINA Core 核心</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Part II - MINA Core/Chapter 8 - IoBuffer.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 8 - IoBuffer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Chapter 8 - IoBuffer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Part II - MINA Core/Chapter 9 - Codec Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 9 - Codec Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Chapter 9 - 编解码器过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Part II - MINA Core/Chapter 10 - Executor Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 10 - Executor Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Chapter 10 - Executor 过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Part II - MINA Core/Chapter 11 - SSL Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 11 - SSL Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Chapter 11 - SSL 过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Part II - MINA Core/Chapter 12 - Logging Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 12 - Logging Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Chapter 12 - 日志过滤器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Part III - MINA Advanced 高级</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Part III - MINA Advanced/Chapter 13 - Debugging.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 13 - Debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Chapter 13 - 调试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Part III - MINA Advanced/Chapter 14 - State Machine.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 14 - State Machine.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Chapter 14 - State Machine (状态机)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Part III - MINA Advanced/Chapter 15 - Proxy.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 15 - Proxy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Chapter 15 - 代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Part III - MINA Advanced/Chapter 16 - JMX Integration.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 16 - JMX Integration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Chapter 16 - JMX 集成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Part III - MINA Advanced/Chapter 17 - Spring Integration.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 17 - Spring Integration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Chapter 17 - Spring 集成
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 其他</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" >
+            
+                
+                    <a target="_blank" href="http:/www.waylau.com/mina-quick-start/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        MINA 快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                
+                    <a target="_blank" href="http:/www.waylau.com/mina-chat/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        MINA 实现聊天功能
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Apache MINA User Guide 中文翻译《Apache MINA 2 用户指南》 </a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4E32;&#x884C;&#x4F20;&#x8F93;">&#x4E32;&#x884C;&#x4F20;&#x8F93;</h1>
+<p>&#x4F7F;&#x7528; MINA 2.0 &#x4F60;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x5230;&#x4E32;&#x884C;&#x7AEF;&#x53E3;&#xFF0C;&#x5C31;&#x50CF;&#x4F60;&#x4F7F;&#x7528; MINA &#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A; TCP/IP &#x7AEF;&#x53E3;&#x4E00;&#x6837;&#x3002;</p>
+<h2 id="&#x83B7;&#x53D6;-mina-20">&#x83B7;&#x53D6; MINA 2.0</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x6784;&#x5EFA;&#x7684;&#x7248;&#x672C; (2.x)&#x3002;</p>
+<h2 id="&#x5148;&#x51B3;&#x6761;&#x4EF6;">&#x5148;&#x51B3;&#x6761;&#x4EF6;</h2>
+<p>&#x5728;&#x4F7F;&#x7528; Java &#x7A0B;&#x5E8F;&#x8BBF;&#x95EE;&#x4E32;&#x884C;&#x7AEF;&#x53E3;&#x4E4B;&#x524D;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5E93; (&#x56E0;&#x4F60;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0D;&#x540C;&#x53EF;&#x80FD;&#x662F; .DLL &#x6216;&#x8005; .so)&#x3002;MINA &#x4F7F;&#x7528;&#x7684;&#x662F;&#x6765;&#x81EA; RXTX.org &#x7684;&#xFF1A;<a href="ftp://ftp.qbang.org/pub/rxtx/rxtx-2.1-7-bins-r2.zip&#x3002;" target="_blank">ftp://ftp.qbang.org/pub/rxtx/rxtx-2.1-7-bins-r2.zip&#x3002;</a></p>
+<p>&#x53EA;&#x9700;&#x8981;&#x628A;&#x5408;&#x9002;&#x7684; .dll &#x6216;&#x8005; .so &#x653E;&#x5728;&#x4F60;&#x7684; JDK/JRE &#x7684; jre/lib/i386/ &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; -Djava.library.path= argument &#x6765;&#x5236;&#x5B9A;&#x4F60;&#x6240;&#x653E;&#x7F6E;&#x7684;&#x672C;&#x5730;&#x5E93;&#x3002;</p>
+<p>mina-transport-serial &#x7684; jar &#x4E0D;&#x5305;&#x62EC;&#x5728;&#x5B8C;&#x6574;&#x53D1;&#x5E03;&#x7248;&#x672C;&#x91CC;&#x5934;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4ECE;&#x8FD9;&#x91CC;<a href="http://repo1.maven.org/maven2/org/apache/mina/mina-transport-serial/" target="_blank">&#x4E0B;&#x8F7D;</a>&#x5230;&#x5B83;&#x3002;</p>
+<h2 id="&#x8FDE;&#x63A5;&#x5230;&#x4E32;&#x884C;&#x7AEF;&#x53E3;">&#x8FDE;&#x63A5;&#x5230;&#x4E32;&#x884C;&#x7AEF;&#x53E3;</h2>
+<p>MINA &#x6240;&#x63D0;&#x4F9B;&#x7684;&#x4E32;&#x884C;&#x901A;&#x4FE1;&#x53EA;&#x6709;&#x4E00;&#x4E2A; IoConnector&#xFF0C;&#x6839;&#x636E;&#x70B9;&#x5BF9;&#x70B9;&#x901A;&#x4FE1;&#x5A92;&#x4F53;&#x7684;&#x6027;&#x8D28;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x5047;&#x5B9A;&#x4F60;&#x5DF2;&#x7ECF;&#x8BFB;&#x8FC7;&#x4E86; MINA &#x6307;&#x5357;&#x3002;</p>
+<p>&#x4F60;&#x9700;&#x8981;&#x4E00;&#x4E2A; SerialConnector &#x4EE5;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x4E2A;&#x4E32;&#x884C;&#x7AEF;&#x53E3;&#xFF1A;</p>
+<pre><code>// create your connector
+IoConnector connector = new SerialConnector()
+connector.setHandler( ... here your buisness logic IoHandler ... );
+</code></pre><p>&#x9664;&#x4E86; SocketConnector &#x4E4B;&#x5916;&#x6CA1;&#x5565;&#x4E0D;&#x540C;&#x7684;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x4E3A;&#x8FDE;&#x63A5;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x4E32;&#x884C;&#x7AEF;&#x53E3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF1A;</p>
+<pre><code>SerialAddress portAddress=new SerialAddress( &quot;/dev/ttyS0&quot;, 38400, 8, StopBits.BITS_1, Parity.NONE, FlowControl.NONE );
+</code></pre><p>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4F60;&#x7684;&#x7AEF;&#x53E3;&#x6807;&#x8BC6;&#x3002;&#x5BF9;&#x4E8E; Windows &#x7CFB;&#x7EDF;&#x7684;&#x7535;&#x8111;&#xFF0C;&#x4E32;&#x884C;&#x7AEF;&#x53E3;&#x88AB;&#x53EB;&#x505A; &quot;COM1&quot;&#x3001;&quot;COM2&quot; &#x7B49;&#x7B49;...&#x5BF9;&#x4E8E; Linux &#x548C;&#x5176;&#x4ED6; Unix &#x7CFB;&#x7EDF;&#xFF1A;&quot;/dev/ttyS0&quot;&#x3001;&quot;/dev/ttyS1&quot;&#x3001;&quot;/dev/ttyUSB0&quot;&#x3002;</p>
+<p>&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x8BBE;&#x5907;&#x548C;&#x901A;&#x4FE1;&#x7279;&#x6027;&#x3002;</p>
+<ul>
+<li>&#x6CE2;&#x7279;&#x7387;</li>
+<li>&#x6570;&#x636E;&#x4F4D;</li>
+<li>&#x5947;&#x5076;&#x6027;</li>
+<li>&#x6D41;&#x63A7;&#x5236;&#x673A;&#x5236;</li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x8FDE;&#x63A5;&#x5668;&#x8FDE;&#x63A5;&#x5230;&#x76F8;&#x5E94;&#x5730;&#x5740;&#xFF1A;</p>
+<pre><code>ConnectFuture future = connector.connect( portAddress );
+future.await();
+IoSession sessin = future.getSession();
+</code></pre><p>&#x5C31;&#x8FD9;&#x4E9B;&#xFF01;&#x5176;&#x4ED6;&#x7167;&#x5E38;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x63D2;&#x8FDB;&#x4F60;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x548C;&#x7F16;&#x89E3;&#x7801;&#x5668;&#x3002;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x8003; RS232&#xFF1A;<a href="http://en.wikipedia.org/wiki/RS232" target="_blank">http://en.wikipedia.org/wiki/RS232</a>&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Part I - Basics/APR Transport.html" class="navigation navigation-prev " aria-label="Previous page: APR 传输"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Part I - Basics/Chapter 7 - Handler.html" class="navigation navigation-next " aria-label="Next page: Chapter 7 - Handler (处理器)"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

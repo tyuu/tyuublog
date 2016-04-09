@@ -1,0 +1,1186 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Chapter 14 - State Machine (状态机) | Apache MINA User Guide 中文翻译《Apache MINA 2 用户指南》 </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../Part III - MINA Advanced/Chapter 15 - Proxy.html" />
+    
+    
+    <link rel="prev" href="../Part III - MINA Advanced/Chapter 13 - Debugging.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.2"
+        data-chapter-title="Chapter 14 - State Machine (状态机)"
+        data-filepath="Part III - MINA Advanced/Chapter 14 - State Machine.md"
+        data-basepath=".."
+        data-revision="Sat Apr 09 2016 12:59:17 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> Part I - Basics 基础</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Part I - Basics/Chapter 1 - Getting Started.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 1 - Getting Started.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Chapter 1 - 开始
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="Part I - Basics/NIO Overview.html">
+            
+                
+                    <a href="../Part I - Basics/NIO Overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        NIO 总览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="Part I - Basics/Why MINA.html">
+            
+                
+                    <a href="../Part I - Basics/Why MINA.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        为何使用 MINA
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="Part I - Basics/Features.html">
+            
+                
+                    <a href="../Part I - Basics/Features.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        特性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="Part I - Basics/First steps.html">
+            
+                
+                    <a href="../Part I - Basics/First steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        开始的步骤
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="Part I - Basics/c1 Summary.html">
+            
+                
+                    <a href="../Part I - Basics/c1 Summary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.</b>
+                        
+                        总结
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="Part I - Basics/Chapter 2 - Basics.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 2 - Basics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.1.</b>
+                        
+                        Chapter 2 - 基础
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="Part I - Basics/Application Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Application Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.</b>
+                        
+                        应用架构
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="Part I - Basics/Server Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Server Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.1.</b>
+                        
+                        服务端架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="Part I - Basics/Client Architecture.html">
+            
+                
+                    <a href="../Part I - Basics/Client Architecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.2.</b>
+                        
+                        客户端架构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="Part I - Basics/Sample TCP Server.html">
+            
+                
+                    <a href="../Part I - Basics/Sample TCP Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.7.</b>
+                        
+                        TCP Server 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="Part I - Basics/Sample TCP Client.html">
+            
+                
+                    <a href="../Part I - Basics/Sample TCP Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.8.</b>
+                        
+                        TCP Client 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="Part I - Basics/Sample UDP Server.html">
+            
+                
+                    <a href="../Part I - Basics/Sample UDP Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.9.</b>
+                        
+                        UDP Server 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="Part I - Basics/Sample UDP Client.html">
+            
+                
+                    <a href="../Part I - Basics/Sample UDP Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.10.</b>
+                        
+                        UDP Client 示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="Part I - Basics/c2 Summary.html">
+            
+                
+                    <a href="../Part I - Basics/c2 Summary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.11.</b>
+                        
+                        总结
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.11.1" data-path="Part I - Basics/Chapter 3 - Service.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 3 - Service.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.11.1.</b>
+                        
+                        Chapter 3 - 服务
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.12" data-path="Part I - Basics/IoService Introduction.html">
+            
+            <span><b>1.1.12.</b> IoService 介绍</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.13" data-path="Part I - Basics/IoService Details.html">
+            
+                
+                    <a href="../Part I - Basics/IoService Details.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.13.</b>
+                        
+                        IoService 细节
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.14" data-path="Part I - Basics/Acceptor.html">
+            
+                
+                    <a href="../Part I - Basics/Acceptor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.14.</b>
+                        
+                        Acceptor
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15" data-path="Part I - Basics/Connector.html">
+            
+                
+                    <a href="../Part I - Basics/Connector.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.</b>
+                        
+                        Connector
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.15.1" data-path="Part I - Basics/Chapter 4 - Session.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 4 - Session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.1.</b>
+                        
+                        Chapter 4 - Session(会话)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15.2" data-path="Part I - Basics/Chapter 5 - Filters.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 5 - Filters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.2.</b>
+                        
+                        Chapter 5 - Filter (过滤器)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.15.3" data-path="Part I - Basics/Chapter 6 - Transports.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 6 - Transports.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.15.3.</b>
+                        
+                        Chapter 6 - Transport (传输)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.16" data-path="Part I - Basics/APR Transport.html">
+            
+                
+                    <a href="../Part I - Basics/APR Transport.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.16.</b>
+                        
+                        APR 传输
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.17" data-path="Part I - Basics/Serial Transport.html">
+            
+                
+                    <a href="../Part I - Basics/Serial Transport.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.17.</b>
+                        
+                        串行传输
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.17.1" data-path="Part I - Basics/Chapter 7 - Handler.html">
+            
+                
+                    <a href="../Part I - Basics/Chapter 7 - Handler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.17.1.</b>
+                        
+                        Chapter 7 - Handler (处理器)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> Part II - MINA Core 核心</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Part II - MINA Core/Chapter 8 - IoBuffer.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 8 - IoBuffer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Chapter 8 - IoBuffer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Part II - MINA Core/Chapter 9 - Codec Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 9 - Codec Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Chapter 9 - 编解码器过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Part II - MINA Core/Chapter 10 - Executor Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 10 - Executor Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Chapter 10 - Executor 过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Part II - MINA Core/Chapter 11 - SSL Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 11 - SSL Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Chapter 11 - SSL 过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Part II - MINA Core/Chapter 12 - Logging Filter.html">
+            
+                
+                    <a href="../Part II - MINA Core/Chapter 12 - Logging Filter.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Chapter 12 - 日志过滤器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Part III - MINA Advanced 高级</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Part III - MINA Advanced/Chapter 13 - Debugging.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 13 - Debugging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Chapter 13 - 调试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="Part III - MINA Advanced/Chapter 14 - State Machine.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 14 - State Machine.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Chapter 14 - State Machine (状态机)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Part III - MINA Advanced/Chapter 15 - Proxy.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 15 - Proxy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Chapter 15 - 代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Part III - MINA Advanced/Chapter 16 - JMX Integration.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 16 - JMX Integration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Chapter 16 - JMX 集成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Part III - MINA Advanced/Chapter 17 - Spring Integration.html">
+            
+                
+                    <a href="../Part III - MINA Advanced/Chapter 17 - Spring Integration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Chapter 17 - Spring 集成
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 其他</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" >
+            
+                
+                    <a target="_blank" href="http:/www.waylau.com/mina-quick-start/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        MINA 快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                
+                    <a target="_blank" href="http:/www.waylau.com/mina-chat/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        MINA 实现聊天功能
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Apache MINA User Guide 中文翻译《Apache MINA 2 用户指南》 </a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x72B6;&#x6001;&#x673A;">&#x72B6;&#x6001;&#x673A;</h1>
+<p>&#x679C;&#x4F60;&#x5728;&#x4F7F;&#x7528; MINA &#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x590D;&#x6742;&#x7F51;&#x7EDC;&#x7684;&#x4EA4;&#x4E92;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5728;&#x67D0;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x4F60;&#x81EA;&#x5DF1;&#x8BD5;&#x7740;&#x4F7F;&#x7528;&#x7ECF;&#x5178;&#x7684; <a href="http://home.earthlink.net/~huston2/dp/state.html" target="_blank">&#x72B6;&#x6001;&#x6A21;&#x5F0F;</a> &#x4EE5;&#x5C1D;&#x8BD5;&#x89E3;&#x51B3;&#x5176;&#x590D;&#x6742;&#x6027;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x4F60;&#x90A3;&#x4E48;&#x5E72;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x68C0;&#x51FA;&#x67E5;&#x770B;  mina-statemachine &#x5185;&#x5BB9;&#xFF0C;&#x5B83;&#x5C1D;&#x8BD5;&#x53BB;&#x89E3;&#x51B3;&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x4E9B;&#x7F3A;&#x9677;&#x3002;</p>
+<h3 id="&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;</h3>
+<p>&#x6211;&#x4EEC;&#x6765;&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x6765;&#x6F14;&#x793A;&#x4E00;&#x4E0B; mina-statemachine &#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#x3002;&#x4E0B;&#x56FE;&#x6F14;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x5F55;&#x97F3;&#x673A;&#x7684;&#x72B6;&#x6001;&#x673A;&#x3002;&#x5706;&#x5708;&#x8868;&#x793A;&#x72B6;&#x6001;&#xFF0C;&#x7BAD;&#x5934;&#x8868;&#x793A;&#x8F6C;&#x6362;&#x3002;&#x6BCF;&#x4E2A;&#x8F6C;&#x6362;&#x4EE5;&#x4E00;&#x4E2A;&#x89E6;&#x53D1;&#x8BE5;&#x8F6C;&#x6362;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x4F5C;&#x4E3A;&#x6807;&#x7B7E;&#x3002;</p>
+<p><img src="../images/state-diagram.png" alt=""></p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x5F55;&#x97F3;&#x673A;&#x5904;&#x4E8E; Empty &#x72B6;&#x6001;&#x3002;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x78C1;&#x5E26;&#x540E; load &#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#xFF0C;&#x5F55;&#x97F3;&#x673A;&#x8F6C;&#x4E3A; Loaded &#x72B6;&#x6001;&#x3002;&#x5728; Loaded &#x72B6;&#x6001;&#x4E2D;&#xFF0C;eject &#x4E8B;&#x4EF6;&#x5C06;&#x4F1A;&#x89E6;&#x53D1;&#x5176;&#x79FB;&#x56DE; Empty &#x72B6;&#x6001;&#xFF0C;&#x800C; play &#x4E8B;&#x4EF6;&#x5219;&#x4F1A;&#x89E6;&#x53D1;&#x5176;&#x79FB;&#x5411; Playing &#x72B6;&#x6001;&#x3002;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;...&#x6211;&#x8BA4;&#x4E3A;&#x4F60;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x51FA;&#x5269;&#x4E0B;&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x5199;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x3002;&#x5916;&#x754C;(&#x4E0E;&#x78C1;&#x5E26;&#x673A;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7801;)&#x5C06;&#x4F1A;&#x53EA;&#x80FD;&#x770B;&#x5230; TapeDeck &#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code>public interface TapeDeck {
+    void load(String nameOfTape);
+    void eject();
+    void start();
+    void pause();
+    void stop();
+}
+</code></pre><p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E0B;&#x5305;&#x542B;&#x5728;&#x72B6;&#x6001;&#x673A;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8F6C;&#x53D8;&#x53D1;&#x751F;&#x65F6;&#x8981;&#x5177;&#x4F53;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x7C7B;&#x3002;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x90FD;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x5E38;&#x91CF;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x5E76;&#x4EE5; @State &#x8FDB;&#x884C;&#x6CE8;&#x89E3;&#xFF1A;</p>
+<pre><code>public class TapeDeckHandler {
+    @State public static final String EMPTY   = &quot;Empty&quot;;
+    @State public static final String LOADED  = &quot;Loaded&quot;;
+    @State public static final String PLAYING = &quot;Playing&quot;;
+    @State public static final String PAUSED  = &quot;Paused&quot;;
+}
+</code></pre><p>&#x73B0;&#x5728;&#x5F53;&#x72B6;&#x6001;&#x88AB;&#x5B9A;&#x4E49;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;&#x6BCF;&#x4E2A;&#x8F6C;&#x6362;&#x5EFA;&#x7ACB;&#x76F8;&#x5E94;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x6BCF;&#x4E2A;&#x8F6C;&#x6362;&#x5C06;&#x88AB;&#x5BF9;&#x5E94;&#x5230; TapeDeckHandler &#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x6BCF;&#x4E2A;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#x90FD;&#x4F7F;&#x7528; @Transition &#x8FDB;&#x884C;&#x6CE8;&#x89E3;&#xFF0C;@Transition &#x5B9A;&#x4E49;&#x4E86;&#x4E8B;&#x4EF6; id&#xFF0C;&#x8BE5;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E86;&#x8F6C;&#x79FB; (on)&#x3001;&#x8F6C;&#x79FB;&#x7684;&#x5F00;&#x59CB;&#x72B6;&#x6001; (in) &#x548C;&#x8F6C;&#x79FB;&#x7684;&#x7ED3;&#x675F;&#x72B6;&#x6001; (next)&#xFF1A;</p>
+<pre><code>public class TapeDeckHandler {
+    @State public static final String EMPTY = &quot;Empty&quot;;
+    @State public static final String LOADED = &quot;Loaded&quot;;
+    @State public static final String PLAYING = &quot;Playing&quot;;
+    @State public static final String PAUSED = &quot;Paused&quot;;
+
+    @Transition(on = &quot;load&quot;, in = EMPTY, next = LOADED)
+    public void loadTape(String nameOfTape) {
+        System.out.println(&quot;Tape &apos;&quot; + nameOfTape + &quot;&apos; loaded&quot;);
+    }
+
+    @Transitions({
+        @Transition(on = &quot;play&quot;, in = LOADED, next = PLAYING),
+        @Transition(on = &quot;play&quot;, in = PAUSED, next = PLAYING)
+    })
+    public void playTape() {
+        System.out.println(&quot;Playing tape&quot;);
+    }
+
+    @Transition(on = &quot;pause&quot;, in = PLAYING, next = PAUSED)
+    public void pauseTape() {
+        System.out.println(&quot;Tape paused&quot;);
+    }
+
+    @Transition(on = &quot;stop&quot;, in = PLAYING, next = LOADED)
+    public void stopTape() {
+        System.out.println(&quot;Tape stopped&quot;);
+    }
+
+    @Transition(on = &quot;eject&quot;, in = LOADED, next = EMPTY)
+    public void ejectTape() {
+        System.out.println(&quot;Tape ejected&quot;);
+    }
+}
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F; TapeDeckHandler &#x7C7B;&#x5E76;&#x6CA1;&#x4E0D;&#x5B9E;&#x73B0; TapeDeck &#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x662F;&#x6709;&#x610F;&#x7684;&#x3002;
+&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x4ED4;&#x7EC6;&#x770B;&#x770B;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x3002;loadTape &#x65B9;&#x6CD5;&#x4E0A;&#x7684; @Transition &#x6CE8;&#x89E3;</p>
+<pre><code>@Transition(on = &quot;load&quot;, in = EMPTY, next = LOADED)
+public void loadTape(String nameOfTape) {
+</code></pre><p>&#x5B9A;&#x4E49;&#x4E86;&#x5F53;&#x5F55;&#x97F3;&#x673A;&#x5904;&#x4E8E; EMPTY &#x72B6;&#x6001;&#x65F6;&#xFF0C;load &#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x4E86;&#xFF0C;loadTape &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x5F55;&#x97F3;&#x673A;&#x4F1A;&#x8F6C;&#x79FB;&#x5230; LOADED &#x72B6;&#x6001;&#x3002;pauseTape&#x3001;stopTape &#x548C; ejectTape &#x65B9;&#x6CD5;&#x4E0A;&#x7684; @Transition &#x6CE8;&#x89E3;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x591A;&#x8BF4;&#x660E;&#x3002;playTape &#x65B9;&#x6CD5;&#x4E0A;&#x7684;&#x6CE8;&#x89E3;&#x770B;&#x8D77;&#x6765;&#x7565;&#x6709;&#x4E0D;&#x540C;&#x3002;&#x6B63;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x89C1;&#xFF0C;&#x5F53;&#x5F55;&#x97F3;&#x673A;&#x5904;&#x4E8E; LOADED &#x6216;&#x8005; PAUSED &#x72B6;&#x6001;&#x65F6;&#xFF0C;play &#x4E8B;&#x4EF6;&#x4F1A;&#x64AD;&#x653E;&#x78C1;&#x5E26;&#x3002;&#x4E3A;&#x591A;&#x4E2A;&#x8F6C;&#x79FB;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;@Transitions &#x6CE8;&#x89E3;&#x5FC5;&#x987B;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>@Transitions({
+    @Transition(on = &quot;play&quot;, in = LOADED, next = PLAYING),
+    @Transition(on = &quot;play&quot;, in = PAUSED, next = PLAYING)
+})
+public void playTape() {
+</code></pre><p>@Transitions &#x6CE8;&#x89E3;&#x7B80;&#x5355;&#x4E3A;&#x5C06;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x5E26;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x5217;&#x51FA;&#x4E86;&#x591A;&#x4E2A;&#x8F6C;&#x79FB;&#x3002;</p>
+<h4 id="&#x66F4;&#x591A;&#x5173;&#x4E8E;-transition-&#x53C2;&#x6570;">&#x66F4;&#x591A;&#x5173;&#x4E8E; @Transition &#x53C2;&#x6570;</h4>
+<ul>
+<li>&#x5982;&#x679C;&#x4F60;&#x5FFD;&#x7565;&#x6389; on &#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x9ED8;&#x8BA4;&#x4E3A; &quot;*&quot;&#xFF0C;&#x8FD9;&#x5C06;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x5FFD;&#x7565;&#x6389; next &#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x9ED8;&#x8BA4;&#x4E3A; &quot;<em>self</em>&quot;&#xFF0C;&#x8FD9;&#x662F;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x3002;&#x8981;&#x5728;&#x4F60;&#x7684;&#x72B6;&#x6001;&#x673A;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x8F6C;&#x79FB;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x5FFD;&#x7565;&#x6389; next &#x53C2;&#x6570;&#x5373;&#x53EF;&#x3002;</li>
+<li>weight &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x8F6C;&#x79FB;&#x5C06;&#x88AB;&#x641C;&#x7D22;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x72B6;&#x6001;&#x7684;&#x8F6C;&#x79FB;&#x5C06;&#x88AB;&#x6839;&#x636E;&#x4ED6;&#x4EEC;&#x7684; weight &#x503C;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x3002;weight &#x9ED8;&#x8BA4;&#x4E3A; 0&#x3002;</li>
+</ul>
+<p>&#x6700;&#x540E;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x4ECE;&#x6CE8;&#x89E3;&#x7684;&#x7C7B;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; StateMachine &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x7528;&#x5176;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86; TapeDeck &#x7684;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    TapeDeckHandler handler = new TapeDeckHandler();
+    StateMachine sm = StateMachineFactory.getInstance(Transition.class).create(TapeDeckHandler.EMPTY, handler);
+    TapeDeck deck = new StateMachineProxyBuilder().create(TapeDeck.class, sm);
+
+    deck.load(&quot;The Knife - Silent Shout&quot;);
+    deck.play();
+    deck.pause();
+    deck.play();
+    deck.stop();
+    deck.eject();
+}
+</code></pre><p>&#x8FD9;&#x4E9B;&#x884C;</p>
+<pre><code>TapeDeckHandler handler = new TapeDeckHandler();
+StateMachine sm = StateMachineFactory.getInstance(Transition.class).create(TapeDeckHandler.EMPTY, handler);
+</code></pre><p>&#x521B;&#x5EFA;&#x4E86;&#x6765;&#x81EA; TapeDeckHandler &#x5B9E;&#x4F8B;&#x7684; StateMachine &#x5B9E;&#x4F8B;&#x3002;StateMachineFactory.getInstance(...) &#x4E2D;&#x8C03;&#x7528; Transition.class &#x4EE5;&#x544A;&#x8BC9;&#x5DE5;&#x5382;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x7528;&#x4E86; @Transition &#x6CE8;&#x91CA;&#x6765;&#x521B;&#x5EFA;&#x72B6;&#x6001;&#x673A;&#x3002;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86; EMPTY &#x4F5C;&#x4E3A;&#x8D77;&#x59CB;&#x72B6;&#x6001;&#x3002;&#x4E00;&#x4E2A; StateMachine &#x57FA;&#x672C;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x5411;&#x56FE;&#x3002;State &#x5BF9;&#x8C61;&#x76F8;&#x5F53;&#x4E8E;&#x56FE;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#xFF0C;Transition &#x5BF9;&#x8C61;&#x76F8;&#x5F53;&#x4E8E;&#x8FB9;&#x754C;&#x3002;&#x6211;&#x4EEC;&#x5728; TapeDeckHandler &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6BCF;&#x4E2A; @Transition &#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A; Transition &#x5B9E;&#x4F8B;&#x3002;</p>
+<p><em>@Transition &#x548C; Transition &#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</em></p>
+<p><em>@Transition &#x662F;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x6807;&#x8BB0;&#x5F53;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x4E4B;&#x95F4;&#x7684;&#x79FB;&#x52A8;&#x53D1;&#x751F;&#x65F6;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;mina-statemachine &#x5C06;&#x5728;&#x5E55;&#x540E;&#x4E3A;&#x6BCF;&#x4E2A; @Transition &#x6CE8;&#x91CA;&#x7684;&#x65B9;&#x6CD5;&#x521B;&#x5EFA; MethodTransition &#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;MethodTransition &#x5B9E;&#x73B0;&#x4E86; Transition &#x63A5;&#x53E3;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A; mina-statemachine &#x7528;&#x6237;&#x4F60;&#x8BB2;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528; Transition &#x6216; MethodTransition &#x7C7B;&#x578B;&#x3002;</em></p>
+<p>TapeDeck &#x5B9E;&#x4F8B;&#x901A;&#x8FC7;&#x8C03;&#x7528; StateMachineProxyBuilder &#x8FDB;&#x884C;&#x521B;&#x5EFA;&#xFF1A;</p>
+<pre><code>TapeDeck deck = new StateMachineProxyBuilder().create(TapeDeck.class, sm);
+</code></pre><p>StateMachineProxyBuilder.create() &#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x5E94;&#x8BE5;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5C06;&#x8981;&#x63A5;&#x6536;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x7684;&#x4E8B;&#x4EF6;&#x7684; StateMachine &#x5B9E;&#x4F8B;&#x8981;&#x6C42;&#x4EE3;&#x7406;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x65F6;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E3A;&#xFF1A;</p>
+<pre><code>Tape &apos;The Knife - Silent Shout&apos; loaded
+Playing tape
+Tape paused
+Playing tape
+Tape stopped
+Tape ejected
+</code></pre><p><em>&#x8FD9;&#x4E9B;&#x90FD;&#x548C; MINA &#x6709;&#x5173;&#x5417;&#xFF1F;</em></p>
+<p><em>&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6CE8;&#x610F;&#x5230;&#x4E86;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6CA1;&#x6709;&#x4EFB;&#x4F55; MINA &#x5177;&#x4F53;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x4E0D;&#x8981;&#x62C5;&#x5FC3;&#xFF0C;&#x7A0D;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x770B;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x4E3A; MINA &#x7684; IoHandler &#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x72B6;&#x6001;&#x673A;&#x3002;</em></p>
+<h2 id="&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;">&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;</h2>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;&#x5F53;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x4EE3;&#x7406;&#x8C03;&#x7528;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x3002;</p>
+<h3 id="&#x67E5;&#x627E;&#x4E00;&#x4E2A;-statecontext--&#x5BF9;&#x8C61;">&#x67E5;&#x627E;&#x4E00;&#x4E2A; StateContext  &#x5BF9;&#x8C61;</h3>
+<p>StateContext &#x5BF9;&#x8C61;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6301;&#x6709;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x4EE3;&#x7406;&#x8C03;&#x7528;&#x65F6;&#x5B83;&#x5C06;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A; StateContextLookup &#x5B9E;&#x4F8B;&#x4EE5;&#x4ECE;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x83B7;&#x53D6; StateContext&#x3002;&#x901A;&#x5E38;&#x5730;&#xFF0C;StateContextLookup &#x5B9E;&#x73B0;&#x5C06;&#x4F1A;&#x4F9D;&#x6B21;&#x67E5;&#x901A;&#x8FC7;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x5E76;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#x6765;&#x53D6;&#x5230;&#x4E00;&#x4E2A; StateContext &#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55; StateContext &#x88AB;&#x5206;&#x914D;&#xFF0C;StateContextLookup &#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E76;&#x5C06;&#x5176;&#x5B58;&#x50A8;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;</p>
+<p>&#x5728;&#x5BF9; MINA &#x7684; IoHandler &#x8FDB;&#x884C;&#x4EE3;&#x7406;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; IoSessoinStateContextLookup &#x5B9E;&#x4F8B;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4E2D;&#x5BFB;&#x627E;&#x4E00;&#x4E2A; IoSession&#x3002;&#x5B83;&#x5C06;&#x4F7F;&#x7528; IoSession &#x7684;&#x5C5E;&#x6027;&#x4E3A;&#x6BCF;&#x4E2A; MINA &#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; StateContext &#x5B9E;&#x4F8B;&#x3002;&#x8FD9;&#x6837;&#x540C;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x673A;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709; MINA &#x4F1A;&#x8BDD;&#x5728;&#x4E0D;&#x76F8;&#x4E92;&#x5E72;&#x6270;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x5171;&#x7528;&#x3002;</p>
+<p><em>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528; StateMachineProxyBuilder &#x521B;&#x5EFA;&#x4EE3;&#x7406;&#x65F6;&#x5E76;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5177;&#x4F53; StateContextLookup &#x5B9E;&#x73B0;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x5C06;&#x4F1A;&#x4F7F;&#x7528; SingletonStateContextLookup&#x3002;SingletonStateContextLookup &#x901A;&#x5E38;&#x4F1A;&#x65E0;&#x89C6;&#x4F20;&#x7ED9;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x53C2;&#x6570; - &#x5B83;&#x5C06;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x540C;&#x4E00;&#x4E2A; StateContext &#x5BF9;&#x8C61;&#x3002;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x5F53;&#x540C;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x673A;&#x540C;&#x65F6;&#x88AB;&#x5927;&#x91CF;&#x5BA2;&#x6237;&#x7AEF;&#x6240;&#x4F7F;&#x7528;&#x65F6;&#x8FD9;&#x5E76;&#x6CA1;&#x6709;&#x591A;&#x5927;&#x7528;&#x5904;</em></p>
+<h3 id="&#x5C06;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;">&#x5C06;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;</h3>
+<p>&#x6240;&#x6709;&#x8C03;&#x7528;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x5C06;&#x88AB;&#x4EE3;&#x7406;&#x8F6C;&#x6362;&#x4E3A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5177;&#x6709;&#x4E00;&#x4E2A; id &#x548C; 0 &#x6216;&#x8005;&#x66F4;&#x591A;&#x53C2;&#x6570;&#x3002;id &#x76F8;&#x5F53;&#x4E8E;&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4E8B;&#x4EF6;&#x53C2;&#x6570;&#x76F8;&#x5F53;&#x4E8E;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x3002;&#x8C03;&#x7528; deck.load(&quot;The Knife - Silent Shout&quot;) &#x7684;&#x65B9;&#x6CD5;&#x76F8;&#x5F53;&#x4E8E;&#x4E8B;&#x4EF6; {id = &quot;load&quot;, arguments = [&quot;The Knife - Silent Shout&quot;]}&#x3002;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x4E5F;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5BF9;&#x5148;&#x524D;&#x67E5;&#x627E;&#x5230;&#x7684; StateContext &#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<h3 id="&#x8C03;&#x7528;-statemachine">&#x8C03;&#x7528; StateMachine</h3>
+<p>&#x4E00;&#x65E6;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x88AB;&#x521B;&#x5EFA;&#xFF0C;&#x4EE3;&#x7406;&#x5C06;&#x4F1A;&#x8C03;&#x7528; StateMachine.handle(Event)&#x3002;StateMachine.handle(Event) &#x8F6E;&#x5DE1;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684; Transition &#x5BF9;&#x8C61;&#x4EE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x5F53;&#x524D;&#x4E8B;&#x4EF6;&#x7684; Transition &#x5B9E;&#x4F8B;&#x3002;&#x5728; Transition &#x627E;&#x5230;&#x540E;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4F1A;&#x505C;&#x6B62;&#x3002;Transition &#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x6309;&#x7167; weight (&#x901A;&#x5E38;&#x7531; @Transition &#x6CE8;&#x91CA;&#x6240;&#x5B9A;&#x4E49;) &#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;</p>
+<h3 id="&#x6267;&#x884C;-transition">&#x6267;&#x884C; Transition</h3>
+<p>&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F;&#x8C03;&#x7528;&#x5339;&#x914D; Event &#x7684; Transition.execute(Event)&#x3002;Transition &#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;StateMachine &#x4F1A;&#x66F4;&#x65B0;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x4E3A; Transition &#x5B9A;&#x4E49;&#x7684;&#x6700;&#x7EC8;&#x72B6;&#x6001;&#x3002;</p>
+<p><em>Transition &#x662F;&#x4E2A;&#x63A5;&#x53E3;&#x3002;&#x6BCF;&#x6B21;&#x4F60;&#x4F7F;&#x7528; @Transition &#x6CE8;&#x89E3;&#x65F6;&#x4E00;&#x4E2A; MethodTransition  &#x5BF9;&#x8C61;&#x5C06;&#x88AB;&#x521B;&#x5EFA;&#x3002;</em></p>
+<h2 id="methodtransition">MethodTransition</h2>
+<p>MethodTransition &#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x89E3;&#x91CA;&#x3002;&#x5982;&#x679C;&#x4E8B;&#x4EF6; id &#x5339;&#x914D; @Transition &#x6CE8;&#x89E3;&#x7684;&#x53C2;&#x6570; MethodTransition &#x5339;&#x914D;&#x5230;&#x8BE5; Event&#xFF0C;&#x88AB;&#x6CE8;&#x89E3;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x517C;&#x5BB9;&#x4E8B;&#x4EF6;&#x7684;&#x5B50;&#x96C6;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C; Event &#x770B;&#x8D77;&#x6765;&#x50CF; {id = &quot;foo&quot;, arguments = [a, b, c]}&#xFF0C;&#x65B9;&#x6CD5;</p>
+<pre><code>@Transition(on = &quot;foo&quot;)
+public void someMethod(One one, Two two, Three three) { ... }
+</code></pre><p>&#x5F53;&#x4E14;&#x4EC5;&#x5F53; ((a instanceof One &amp;&amp; b instanceof Two &amp;&amp; c instanceof Three) == true) &#x65F6;&#x5339;&#x914D;&#x3002;&#x5339;&#x914D;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x88AB;&#x5339;&#x914D;&#x7684;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x5230;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7684;&#x4E8B;&#x4EF6;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>someMethod(a, b, c);
+</code></pre><p><em>Integer&#x3001;Double&#x3001;Float &#x7B49;&#x7B49;&#x4E5F;&#x5339;&#x914D;&#x5B83;&#x4EEC;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B; int&#x3001;double&#x3001;float &#x7B49;&#x7B49;&#x3002;</em></p>
+<p>&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x5B50;&#x96C6;&#x4E5F;&#x4F1A;&#x5339;&#x914D;&#xFF1A;</p>
+<pre><code>@Transition(on = &quot;foo&quot;)
+public void someMethod(Two two) { ... }
+</code></pre><p>&#x5F53; ((a instanceof Two || b instanceof Two || c instanceof Two) == true) &#x65F6;&#x5339;&#x914D;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53; someMethod  &#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x4E8B;&#x4EF6;&#x53C2;&#x6570;&#x5C06;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x53C2;&#x6570;&#x540D;&#x4E3A; two  &#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x5E38;&#x5E38;&#x4F1A;&#x5728;&#x4E8B;&#x4EF6; id &#x5339;&#x914D;&#x4EE5;&#x4E0B;&#x65F6;&#x5339;&#x914D;&#x5230;&#xFF1A;</p>
+<pre><code>@Transition(on = &quot;foo&quot;)
+public void someMethod() { ... }
+</code></pre><p>&#x8BA9;&#x4E8B;&#x60C5;&#x66F4;&#x590D;&#x6742;&#xFF0C;&#x524D;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x4E5F;&#x4F1A;&#x5339;&#x914D; Event &#x7C7B;&#x548C; StateContext &#x63A5;&#x53E3;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;</p>
+<pre><code>@Transition(on = &quot;foo&quot;)
+public void someMethod(Event event, StateContext context, One one, Two two, Three three) { ... }
+@Transition(on = &quot;foo&quot;)
+public void someMethod(Event event, One one, Two two, Three three) { ... }
+@Transition(on = &quot;foo&quot;)
+public void someMethod(StateContext context, One one, Two two, Three three) { ... }
+</code></pre><p>&#x4E5F;&#x5339;&#x914D; Event {id = &quot;foo&quot;, arguments = [a, b, c]} if ((a instanceof One &amp;&amp; b instanceof Two &amp;&amp; c instanceof Three) == true)&#x3002;&#x5728; someMethod &#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x5F53;&#x524D; Event &#x5BF9;&#x8C61;&#x5C06;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x4E8B;&#x4EF6;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#xFF0C;&#x5F53;&#x524D; StateContext &#x4F1A;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x4E0A;&#x4E0B;&#x6587;&#x3002;</p>
+<p>&#x50CF;&#x4EE5;&#x524D;&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4E00;&#x4E2A;&#x7279;&#x5B9A; StateContext &#x5B9E;&#x73B0;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x5B9A;&#x4E49;&#x4EE5;&#x53D6;&#x4EE3;&#x77F3;&#x6CB9;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code>@Transition(on = &quot;foo&quot;)
+public void someMethod(MyStateContext context, Two two) { ... }
+</code></pre><p><em>&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x7684;&#x987A;&#x5E8F;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5F53;&#x524D; Event&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x3002;StateContext &#x5FC5;&#x987B;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570; (&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; Event &#x7684;&#x60C5;&#x51B5;&#x4E0B;)&#x3002;&#x4E8B;&#x4EF6;&#x53C2;&#x6570;&#x4E5F;&#x5FC5;&#x987B;&#x5339;&#x914D;&#x5F53;&#x524D;&#x987A;&#x5E8F;&#x3002;MethodTransition &#x4E0D;&#x4F1A;&#x8BD5;&#x7740;&#x5BF9;&#x4E8B;&#x4EF6;&#x53C2;&#x6570;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x4EE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x3002;</em></p>
+<p>&#x5982;&#x679C;&#x4F60;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x606D;&#x559C;&#xFF01;&#x6211;&#x77E5;&#x9053;&#x4E0A;&#x9762;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x96BE;&#x4EE5;&#x6D88;&#x5316;&#x3002;&#x6211;&#x5E0C;&#x671B;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x8BA9;&#x4E8B;&#x60C5;&#x6E05;&#x6670;&#x4E00;&#x4E9B;&#xFF1A;</p>
+<p>&#x8003;&#x8651;&#x4E00;&#x4E0B; Event {id = &quot;messageReceived&quot;, arguments = [ArrayList a = [...], Integer b = 1024]}&#x3002;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x5339;&#x914D;&#x8FD9;&#x4E00; Event&#xFF1A;</p>
+<pre><code>// All method arguments matches all event arguments directly
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(ArrayList l, Integer i) { ... }
+
+// Matches since ((a instanceof List &amp;&amp; b instanceof Number) == true)
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(List l, Number n) { ... }
+
+// Matches since ((b instanceof Number) == true)
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(Number n) { ... }
+
+// Methods with no arguments always matches
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived() { ... }
+
+// Methods only interested in the current Event or StateContext always matches
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(StateContext context) { ... }
+
+// Matches since ((a instanceof Collection) == true)
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(Event event, Collection c) { ... }
+</code></pre><p>&#x4EE5;&#x4E0B;&#x5219;&#x4E0D;&#x80FD;&#x591F;&#x5339;&#x914D;&#xFF1A;</p>
+<pre><code>// Incorrect ordering
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(Integer i, List l) { ... }
+
+// ((a instanceof LinkedList) == false)
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(LinkedList l, Number n) { ... }
+
+// Event must be first argument
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(ArrayList l, Event event) { ... }
+
+// StateContext must be second argument if Event is used
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(Event event, ArrayList l, StateContext context) { ... }
+
+// Event must come before StateContext
+@Transition(on = &quot;messageReceived&quot;)
+public void messageReceived(StateContext context, Event event) { ... }
+</code></pre><h3 id="&#x72B6;&#x6001;&#x7EE7;&#x627F;">&#x72B6;&#x6001;&#x7EE7;&#x627F;</h3>
+<p>&#x72B6;&#x6001;&#x5B9E;&#x4F8B;&#x53EF;&#x80FD;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x7236;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C; StateMachine.handle(Event) &#x65E0;&#x6CD5;&#x5728;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x4E2D;&#x627E;&#x5230;&#x5339;&#x914D;&#x5F53;&#x524D; Event &#x7684; Transition&#xFF0C;&#x5B83;&#x5C06;&#x67E5;&#x627E;&#x7236;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x4ECD;&#x65E7;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x5339;&#x914D;&#x7684;&#xFF0C;&#x7236;&#x72B6;&#x6001;&#x7684;&#x7236;&#x72B6;&#x6001;&#x5C06;&#x88AB;&#x67E5;&#x627E;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x6CDB;&#x578B;&#x4EE3;&#x7801;&#x5230;&#x6240;&#x6709;&#x72B6;&#x6001;&#x800C;&#x6CA1;&#x6709;&#x4E3A;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x5B9A;&#x4E49; @Transition &#x65F6;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#x5F88;&#x6709;&#x7528;&#x3002;&#x8FD9;&#x91CC;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528; @State &#x6CE8;&#x89E3;&#x521B;&#x5EFA;&#x72B6;&#x6001;&#x5C42;&#x6B21;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>@State    public static final String A = &quot;A&quot;;
+@State(A) public static final String B = &quot;A-&gt;B&quot;;
+@State(A) public static final String C = &quot;A-&gt;C&quot;;
+@State(B) public static final String D = &quot;A-&gt;B-&gt;D&quot;;
+@State(C) public static final String E = &quot;A-&gt;C-&gt;E&quot;;
+</code></pre><h3 id="&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x7EE7;&#x627F;&#x65F6;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;">&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x7EE7;&#x627F;&#x65F6;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;</h3>
+<p>&#x73B0;&#x5728;&#x56DE;&#x5230; TapeDeck &#x4F8B;&#x5B50;&#x3002;&#x5F53;&#x5F55;&#x97F3;&#x673A;&#x4E2D;&#x6CA1;&#x6709;&#x78C1;&#x5E26;&#x65F6;&#x5982;&#x679C;&#x4F60;&#x8C03;&#x7528; deck.play() &#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x8BD5;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    ...
+    deck.load(&quot;The Knife - Silent Shout&quot;);
+    deck.play();
+    deck.pause();
+    deck.play();
+    deck.stop();
+    deck.eject();
+    deck.play();
+}
+
+...
+Tape stopped
+Tape ejected
+Exception in thread &quot;main&quot; o.a.m.sm.event.UnhandledEventException: 
+Unhandled event: org.apache.mina.statemachine.event.Event@15eb0a9[id=play,...]
+    at org.apache.mina.statemachine.StateMachine.handle(StateMachine.java:285)
+    at org.apache.mina.statemachine.StateMachine.processEvents(StateMachine.java:142)
+    ...
+</code></pre><p>&#x5662;&#x54DF;&#xFF01;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E00;&#x4E2A; UnhandledEventException&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5904;&#x4E8E; Empty &#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5904;&#x7406; play &#x4E8B;&#x4EF6;&#x7684;&#x8F6C;&#x79FB;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x72B6;&#x6001;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x79FB;&#x52A8;&#xFF0C;&#x7528;&#x4EE5;&#x5904;&#x7406;&#x4E0D;&#x5339;&#x914D;&#x7684; Event &#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>@Transitions({
+    @Transition(on = &quot;*&quot;, in = EMPTY, weight = 100),
+    @Transition(on = &quot;*&quot;, in = LOADED, weight = 100),
+    @Transition(on = &quot;*&quot;, in = PLAYING, weight = 100),
+    @Transition(on = &quot;*&quot;, in = PAUSED, weight = 100)
+})
+public void error(Event event) {
+    System.out.println(&quot;Cannot &apos;&quot; + event.getId() + &quot;&apos; at this time&quot;);
+}
+</code></pre><p>&#x73B0;&#x5728;&#x4F60;&#x5728;&#x8FD0;&#x884C;&#x4E0A;&#x9762;&#x7684; main() &#x65B9;&#x6CD5;&#x65F6;&#x5C31;&#x4E0D;&#x4F1A;&#x906D;&#x9047;&#x5230;&#x5F02;&#x5E38;&#x4E86;&#x3002;&#x8F93;&#x51FA;&#x662F;&#x4E3A;&#xFF1A;</p>
+<pre><code>...
+Tape stopped
+Tape ejected
+Cannot &apos;play&apos; at this time
+</code></pre><p>&#x73B0;&#x5728;&#x8C8C;&#x4F3C;&#x5DE5;&#x4F5C;&#x826F;&#x597D;&#x4E86;&#xFF0C;&#x662F;&#x4E48;&#xFF1F;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6709; 30 &#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F; 4 &#x4E2A;&#x5462;&#xFF1F;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x8981;&#x9700;&#x8981;&#x5728; error() &#x65B9;&#x6CD5;&#x4E0A;&#x52A0; 30 &#x4E2A; @Transition &#x6CE8;&#x89E3;&#x4E86;&#x3002;&#x4E0D;&#x600E;&#x4E48;&#x597D;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x7EE7;&#x627F;&#x66FF;&#x4EE3;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#xFF1A;</p>
+<pre><code>public static class TapeDeckHandler {
+    @State public static final String ROOT = &quot;Root&quot;;
+    @State(ROOT) public static final String EMPTY = &quot;Empty&quot;;
+    @State(ROOT) public static final String LOADED = &quot;Loaded&quot;;
+    @State(ROOT) public static final String PLAYING = &quot;Playing&quot;;
+    @State(ROOT) public static final String PAUSED = &quot;Paused&quot;;
+
+    ...
+
+    @Transition(on = &quot;*&quot;, in = ROOT)
+    public void error(Event event) {
+        System.out.println(&quot;Cannot &apos;&quot; + event.getId() + &quot;&apos; at this time&quot;);
+    }
+}
+</code></pre><p>&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x7EF4;&#x62A4;&#x7684;&#x65F6;&#x5019;&#x4E8B;&#x60C5;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7B80;&#x5355;&#x4E86;&#x3002;</p>
+<h3 id="minastatemachine-&#x4F7F;&#x7528;-iohandler">mina-statemachine &#x4F7F;&#x7528; IoHandler</h3>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8981;&#x8F6C;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x5F55;&#x97F3;&#x673A;&#x4E3A;&#x4E00;&#x4E2A; TCP &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x529F;&#x80FD;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x3002;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x4F1A;&#x63A5;&#x6536;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x6CE8;&#x5165; load&#x3001;play&#x3001;stop &#x7B49;&#x7B49;&#x3002;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x4EE5; positive + &#x6216;&#x8005; negative - &#x8FDB;&#x884C;&#x54CD;&#x5E94;&#x3002;&#x534F;&#x8BAE;&#x662F;&#x57FA;&#x4E8E;&#x6587;&#x672C;&#x7684;&#xFF0C;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x548C;&#x54CD;&#x5E94;&#x90FD;&#x662F;&#x4E00;&#x884C;&#x884C;&#x7684; UTF-8 &#x6587;&#x672C;&#xFF0C;&#x5E76;&#x4EE5; CRLF (&#x6BD4;&#x5982;&#xFF0C;Java &#x4E2D;&#x662F; \r\n) &#x7EC8;&#x7ED3;&#x3002;&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>telnet localhost 12345
+S: + Greetings from your tape deck!
+C: list
+S: + (1: &quot;The Knife - Silent Shout&quot;, 2: &quot;Kings of convenience - Riot on an empty street&quot;)
+C: load 1
+S: + &quot;The Knife - Silent Shout&quot; loaded
+C: play
+S: + Playing &quot;The Knife - Silent Shout&quot;
+C: pause
+S: + &quot;The Knife - Silent Shout&quot; paused
+C: play
+S: + Playing &quot;The Knife - Silent Shout&quot;
+C: info
+S: + Tape deck is playing. Current tape: &quot;The Knife - Silent Shout&quot;
+C: eject
+S: - Cannot eject while playing
+C: stop
+S: + &quot;The Knife - Silent Shout&quot; stopped
+C: eject
+S: + &quot;The Knife - Silent Shout&quot; ejected
+C: quit
+S: + Bye! Please come back!
+</code></pre><p>&#x8FD9;&#x4E00;&#x4F1A;&#x8BDD;&#x4E2D;&#x6240;&#x63CF;&#x8FF0;&#x5230;&#x7684; TapeDeckServer &#x7684;&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5728; svn &#x5E93;&#x91CC;&#x7684; mina-example &#x6A21;&#x5757;&#x7684; org.apache.mina.example.tapedeck &#x5305;&#x4E2D;&#x627E;&#x5230;&#x3002;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x4E86; MINA &#x7684; ProtocolCodecFilter &#x6765;&#x5C06;&#x5B57;&#x8282;&#x8F6C;&#x5316;&#x4E3A;&#x547D;&#x4EE4;&#x5BF9;&#x8C61; (&#x53CD;&#x4E4B;&#x4EA6;&#x7136;)&#x3002;&#x6709;&#x4E00;&#x4E2A;&#x4E3A;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x8BC6;&#x522B;&#x7684;&#x8BF7;&#x6C42;&#x7C7B;&#x578B;&#x7684; Command &#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x63CF;&#x8FF0;&#x7F16;&#x89E3;&#x7801;&#x5668;&#x5B9E;&#x73B0;&#x5728;&#x4EFB;&#x4F55;&#x7EC6;&#x8282;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#x3002;&#x5B9E;&#x73B0;&#x4E86;&#x72B6;&#x6001;&#x673A;&#x7684;&#x91CD;&#x8981;&#x7684;&#x7C7B;&#x662F; TapeDeckServer&#x3002;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x7684;&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#x662F;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code>@State public static final String ROOT = &quot;Root&quot;;
+@State(ROOT) public static final String EMPTY = &quot;Empty&quot;;
+@State(ROOT) public static final String LOADED = &quot;Loaded&quot;;
+@State(ROOT) public static final String PLAYING = &quot;Playing&quot;;
+@State(ROOT) public static final String PAUSED = &quot;Paused&quot;;
+</code></pre><p>&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x65B0;&#x4E1C;&#x897F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x73B0;&#x5728;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B; playTape &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@IoHandlerTransitions({
+    @IoHandlerTransition(on = MESSAGE_RECEIVED, in = LOADED, next = PLAYING),
+    @IoHandlerTransition(on = MESSAGE_RECEIVED, in = PAUSED, next = PLAYING)
+})
+public void playTape(TapeDeckContext context, IoSession session, PlayCommand cmd) {
+    session.write(&quot;+ Playing \&quot;&quot; + context.tapeName + &quot;\&quot;&quot;);
+}
+</code></pre><p>&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x524D;&#x9762;&#x4F7F;&#x7528;&#x7684;&#x5E38;&#x89C4; @Transition &#x548C; @Transitions &#x6CE8;&#x89E3;&#xFF0C;&#x7528;&#x7684;&#x662F; MINA &#x7279;&#x5B9A;&#x7684; @IoHandlerTransition &#x548C; @IoHandlerTransitions &#x6CE8;&#x89E3;&#x3002;&#x8FD9;&#x662F;&#x4E3A; MINA &#x7684; IoHandler &#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x72B6;&#x6001;&#x673A;&#x65F6;&#x7684;&#x9996;&#x9009;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x4E3A;&#x4E8B;&#x4EF6; id &#x4F7F;&#x7528;&#x4E00;&#x4E2A; Java &#x679A;&#x4E3E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x524D;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x6240;&#x7528;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5B83;&#x4EEC;&#x4E5F;&#x662F;&#x4E3A; MINA &#x7684; IoFilter &#x63A5;&#x53E3;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x6CE8;&#x89E3;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528; MESSAGE_RECEIVED &#x53D6;&#x4EE3;&#x4E86; &quot;play&quot; &#x4F5C;&#x4E3A;&#x4E8B;&#x4EF6;&#x540D; (@IoHandlerTransition &#x6CE8;&#x89E3;&#x7684; on &#x5C5E;&#x6027;)&#x3002;&#x8FD9;&#x4E00;&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#x4E8E; org.apache.mina.statemachine.event.IoHandlerEvents&#xFF0C;&#x503C;&#x662F;&#x4E3A; &quot;messageReceived&quot;&#xFF0C;&#x81EA;&#x7136;&#x5BF9;&#x5E94;&#x4E8E; MINA &#x7684; IoHandler &#x63A5;&#x53E3;&#x7684; messageReceived() &#x65B9;&#x6CD5;&#x3002;&#x591A;&#x4E8F; Java5 &#x7684;&#x9759;&#x6001;&#x5BFC;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x5199;&#x51FA;&#x6301;&#x6709;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x540D;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x628A;</p>
+<pre><code>import static org.apache.mina.statemachine.event.IoHandlerEvents.*;
+</code></pre><p>&#x58F0;&#x660E;&#x653E;&#x5728;&#x5BFC;&#x5165;&#x90E8;&#x5206;&#x4E2D;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x53E6;&#x4E00;&#x4EF6;&#x4E8B;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684; StateContext &#x5B9E;&#x73B0;&#xFF0C;TapeDeckContext&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x7528;&#x4E8E;&#x8DDF;&#x8E2A;&#x5F53;&#x524D;&#x78C1;&#x5E26;&#x7684;&#x540D;&#x79F0;&#xFF1A;</p>
+<pre><code>static class TapeDeckContext extends AbstractStateContext {
+    public String tapeName;
+}
+</code></pre><p><em>&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x628A;&#x78C1;&#x5E26;&#x540D;&#x79F0;&#x5B58;&#x50A8;&#x5728; IoSession&#xFF1F;</em></p>
+<p><em>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x78C1;&#x5E26;&#x540D;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5B58;&#x50A8;&#x5728; IoSession &#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684; StateContext&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x63D0;&#x4F9B;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x3002;</em></p>
+<p>&#x5173;&#x4E8E; playTape() &#x65B9;&#x6CD5;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4EF6;&#x4E8B;&#x662F;&#x5B83;&#x4EE5;&#x4E00;&#x4E2A; PlayCommand &#x4F5C;&#x4E3A;&#x5176;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x6700;&#x540E;&#x53C2;&#x6570;&#x5BF9;&#x5E94;&#x4E8E; IoHandler &#x7684; messageReceived(IoSession session, Object message) &#x65B9;&#x6CD5;&#x7684; message &#x53C2;&#x6570;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; playTape() &#x5C06;&#x53EA;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x996D;&#x9001;&#x7684;&#x5B57;&#x8282;&#x53EF;&#x4EE5;&#x88AB;&#x89E3;&#x7801;&#x4E3A;&#x4E00;&#x4E2A; PlayCommand &#x65F6;&#x624D;&#x88AB;&#x8C03;&#x7528;&#x5230;&#x3002;</p>
+<p>&#x5728;&#x5F55;&#x97F3;&#x673A;&#x80FD;&#x591F;&#x64AD;&#x653E;&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x5F97;&#x5148;&#x653E;&#x8FDB;&#x4E00;&#x4E2A;&#x78C1;&#x5E26;&#x3002;&#x5F53;&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x5230; LoadCommand &#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x78C1;&#x5E26;&#x53F7;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x4ECE;&#x4E00;&#x4E2A;&#x78C1;&#x5E26;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x83B7;&#x53D6;&#x8BE5;&#x78C1;&#x5E26;&#x540D;&#xFF1A;</p>
+<pre><code>@IoHandlerTransition(on = MESSAGE_RECEIVED, in = EMPTY, next = LOADED)
+public void loadTape(TapeDeckContext context, IoSession session, LoadCommand cmd) {
+    if (cmd.getTapeNumber() &lt; 1 || cmd.getTapeNumber() &gt; tapes.length) {
+        session.write(&quot;- Unknown tape number: &quot; + cmd.getTapeNumber());
+        StateControl.breakAndGotoNext(EMPTY);
+    } else {
+        context.tapeName = tapes[cmd.getTapeNumber() - 1];
+        session.write(&quot;+ \&quot;&quot; + context.tapeName + &quot;\&quot; loaded&quot;);
+    }
+}
+</code></pre><p>&#x4EE3;&#x7801;&#x4F7F;&#x7528; StateControl &#x6765;&#x8986;&#x76D6;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x672A;&#x77E5;&#x78C1;&#x5E26;&#x53F7;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5E94;&#x8BE5;&#x79FB;&#x81F3; LOADED &#x72B6;&#x6001;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x7EE7;&#x7EED;&#x4FDD;&#x6301; EMPTY&#xFF0C;</p>
+<pre><code>StateControl.breakAndGotoNext(EMPTY);
+</code></pre><p>&#x6B63;&#x5982;&#x4E0A;&#x884C;&#x4EE3;&#x7801;&#x4E00;&#x6837;&#x3002;StateControl &#x7C7B;&#x7A0D;&#x540E;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;</p>
+<p>connect() &#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x603B;&#x662F;&#x5728;&#x4F1A;&#x8BDD;&#x7684;&#x8D77;&#x59CB;&#x65F6; (&#x5F53; MINA &#x8C03;&#x7528; IoHandler &#x7684; sessionOpened() &#x65F6;) &#x88AB;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>@IoHandlerTransition(on = SESSION_OPENED, in = EMPTY)
+public void connect(IoSession session) {
+    session.write(&quot;+ Greetings from your tape deck!&quot;);
+}
+</code></pre><p>&#x5B83;&#x505A;&#x7684;&#x6240;&#x6709;&#x4E8B;&#x60C5;&#x53EA;&#x662F;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x81F4;&#x610F;&#x3002;&#x72B6;&#x6001;&#x673A;&#x5C06;&#x4FDD;&#x6301;&#x4E3A; EMPTY &#x72B6;&#x6001;&#x3002;</p>
+<p>pauseTape()&#x3001;stopTape() &#x548C; ejectTape() &#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E8E; playTape()&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;listTapes()&#x3001;info() &#x548C; quit() &#x65B9;&#x6CD5;&#x73B0;&#x5728;&#x4E5F;&#x5E94;&#x8BE5;&#x7B80;&#x5355;&#x660E;&#x4E86;&#x4E86;&#x5427;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#x540E;&#x9762;&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E; ROOT &#x72B6;&#x6001;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; list&#x3001;info &#x548C; quit &#x660E;&#x4EE4;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;error() &#x65B9;&#x6CD5;&#x5C06;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x5BF9;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x547D;&#x4EE4;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>@IoHandlerTransition(on = MESSAGE_RECEIVED, in = ROOT, weight = 10)
+public void error(Event event, StateContext context, IoSession session, Command cmd) {
+    session.write(&quot;- Cannot &quot; + cmd.getName() + &quot; while &quot; 
+           + context.getCurrentState().getId().toLowerCase());
+}
+</code></pre><p>error() &#x5360;&#x7528;&#x7684;&#x6743;&#x91CD;&#x6BD4; listTapes()&#x3001;info() &#x548C; quit() &#x8981;&#x9AD8;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x5B83;&#x88AB;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x6240;&#x8C03;&#x7528;&#x3002;&#x6CE8;&#x610F; error() &#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528; StateContext &#x5BF9;&#x8C61;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684; id &#x7684;&#x3002;&#x7528;&#x4E8E;&#x6CE8;&#x89E3; @State &#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x7684;&#x503C;&#x5C06;&#x88AB; mina-statemachine &#x7528;&#x4F5C;&#x72B6;&#x6001; id&#x3002;</p>
+<p>commandSyntaxError() &#x65B9;&#x6CD5;&#x5C06;&#x5728;&#x4E00;&#x4E2A; CommandSyntaxException &#x88AB;&#x6211;&#x4EEC;&#x7684; ProtocolDecoder &#x629B;&#x51FA;&#x540E;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x5B83;&#x7B80;&#x5355;&#x6253;&#x5370;&#x51FA;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x884C;&#x65E0;&#x6CD5;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A; Command&#x3002;</p>
+<p>exceptionCaught() &#x5C06;&#x88AB;&#x4E3A;&#x6240;&#x6709;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x800C;&#x8C03;&#x7528;&#xFF0C;&#x9664;&#x4E86; CommandSyntaxException &#x5F02;&#x5E38; (&#x5B83;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x6BD4; commandSyntaxError() &#x65B9;&#x6CD5;&#x66F4;&#x9AD8;&#x7684;&#x6743;&#x91CD;)&#x3002;&#x5B83;&#x5C06;&#x7ACB;&#x5373;&#x5173;&#x95ED;&#x4F1A;&#x8BDD;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x4E00;&#x4E2A; @IoHandlerTransition &#x65B9;&#x6CD5;&#x662F; unhandledEvent()&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5176;&#x4ED6; @IoHandlerTransition &#x65B9;&#x6CD5;&#x5339;&#x914D; Event &#x65F6;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FD9;&#x6837;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5728;&#x6240;&#x6709;&#x72B6;&#x6001;&#x4E2D;&#x4E3A;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;&#x52A0;&#x4E0A; @IoHandlerTransition &#x6CE8;&#x89E3; (&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x6CA1;&#x5BF9; messageSent &#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x5904;&#x7406;)&#x3002;&#x5426;&#x5219;&#x5982;&#x679C;&#x4E00;&#x4E2A; Event &#x88AB;&#x72B6;&#x6001;&#x673A;&#x5904;&#x7406;&#x7684;&#x8BDD; mina-statemachine &#x4F1A;&#x629B;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x770B;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5757;&#x4EE3;&#x7801;&#x662F;&#x4E3A;&#x521B;&#x5EFA; IoHandler &#x4EE3;&#x7406;&#x7684;&#x4EE3;&#x7801;&#x548C; main() &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>private static IoHandler createIoHandler() {
+    StateMachine sm = StateMachineFactory.getInstance(IoHandlerTransition.class).create(EMPTY, new TapeDeckServer());
+
+    return new StateMachineProxyBuilder().setStateContextLookup(
+            new IoSessionStateContextLookup(new StateContextFactory() {
+                public StateContext create() {
+                    return new TapeDeckContext();
+                }
+            })).create(IoHandler.class, sm);
+}
+
+// This code will work with MINA 1.0/1.1:
+public static void main(String[] args) throws Exception {
+    SocketAcceptor acceptor = new SocketAcceptor();
+    SocketAcceptorConfig config = new SocketAcceptorConfig();
+    config.setReuseAddress(true);
+    ProtocolCodecFilter pcf = new ProtocolCodecFilter(
+            new TextLineEncoder(), new CommandDecoder());
+    config.getFilterChain().addLast(&quot;codec&quot;, pcf);
+    acceptor.bind(new InetSocketAddress(12345), createIoHandler(), config);
+}
+
+// This code will work with MINA trunk:
+public static void main(String[] args) throws Exception {
+    SocketAcceptor acceptor = new NioSocketAcceptor();
+    acceptor.setReuseAddress(true);
+    ProtocolCodecFilter pcf = new ProtocolCodecFilter(
+            new TextLineEncoder(), new CommandDecoder());
+    acceptor.getFilterChain().addLast(&quot;codec&quot;, pcf);
+    acceptor.setHandler(createIoHandler());
+    acceptor.setLocalAddress(new InetSocketAddress(PORT));
+    acceptor.bind();
+}
+</code></pre><p>&#x9664;&#x4E86;&#x5728;&#x5BF9; StateMachineFactory.getInstance(...) &#x8C03;&#x7528;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86; IoHandlerTransition.class &#x53D6;&#x4EE3; Transition.classcreateIoHandler() &#x4E4B;&#x5916;&#xFF0C;createIoHandler() &#x5C31;&#x50CF;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5E72;&#x7684;&#x90A3;&#x6837;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; StateMachine&#x3002;&#x8FD9;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x7528;&#x7684;&#x662F; @IoHandlerTransition &#x6CE8;&#x89E3;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x521B;&#x5EFA; IoHandler  &#x4EE3;&#x7406;&#x65F6;&#xFF0C;&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x4F7F;&#x7528; IoSessionStateContextLookup  &#x548C;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684; StateContextFactory&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x4F7F;&#x7528; IoSessionStateContextLookup &#x7684;&#x8BDD;&#xFF0C;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x5206;&#x4EAB;&#x4E00;&#x4E2A;&#x5E76;&#x4E0D;&#x5408;&#x9002;&#x7684;&#x72B6;&#x6001;&#x673A;&#x3002;</p>
+<p>main() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E86; SocketAcceptor &#x548C; ProtocolCodecFilter&#xFF0C;ProtocolCodecFilter &#x4E3A;&#x5176;&#x8FC7;&#x6EE4;&#x5668;&#x94FE;&#x5BF9; Command &#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x88AB; createIoHandler() &#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x4E00;&#x4E2A; IoHandler &#x5B9E;&#x4F8B;&#x7ED1;&#x5B9A;&#x5230;&#x7AEF;&#x53E3; 12345&#x3002;</p>
+<h2 id="&#x6269;&#x5C55;&#x4E3B;&#x9898;">&#x6269;&#x5C55;&#x4E3B;&#x9898;</h2>
+<h3 id="&#x901A;&#x8FC7;&#x7F16;&#x7A0B;&#x6539;&#x53D8;&#x72B6;&#x6001;">&#x901A;&#x8FC7;&#x7F16;&#x7A0B;&#x6539;&#x53D8;&#x72B6;&#x6001;</h3>
+<p>&#x672A;&#x5B8C;&#x5F85;&#x7EED;...</p>
+<h3 id="&#x9012;&#x5F52;&#x8C03;&#x7528;&#x72B6;&#x6001;&#x673A;">&#x9012;&#x5F52;&#x8C03;&#x7528;&#x72B6;&#x6001;&#x673A;</h3>
+<p>&#x672A;&#x5B8C;&#x5F85;&#x7EED;...</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Part III - MINA Advanced/Chapter 13 - Debugging.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 13 - 调试"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Part III - MINA Advanced/Chapter 15 - Proxy.html" class="navigation navigation-next " aria-label="Next page: Chapter 15 - 代理"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

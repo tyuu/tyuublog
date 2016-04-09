@@ -3,7 +3,17 @@
 
     <sitemap>
         <loc>http://tyuu.me/post-sitemap.xml</loc>
-        <lastmod>2016-04-09T03:09:40.000Z</lastmod>
+        <lastmod>2016-04-09T06:00:06.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://tyuu.me/page-sitemap.xml</loc>
+        <lastmod>2016-04-09T05:46:54.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://tyuu.me/tag-sitemap.xml</loc>
+        <lastmod>2016-04-09T05:53:10.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
